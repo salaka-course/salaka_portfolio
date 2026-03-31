@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GitGuide — Maîtrisez Git & GitHub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@300;400;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="CSS/style.css"/>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-dot"></div>
+    GitGuide
+  </a>
+  <ul class="nav-links">
+    <li><a href="#commandes">Commandes</a></li>
+    <li><a href="https://git-scm.com/docs" target="_blank">Docs Git</a></li>
+    <li><a href="https://github.com" target="_blank" class="nav-cta">GitHub →</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+
+    <div class="badge">
+      <div class="badge-dot"></div>
+      Référence complète · Git &amp; GitHub
+    </div>
+
+    <h1 class="hero-title">
+      <span class="dim">MAÎTRISE</span><br>
+      <span class="green">GIT</span><br>
+      <span class="dim">EN UN COUP</span>
+    </h1>
+
+    <p class="hero-sub">
+      Toutes les commandes essentielles, organisées par thème.<br>
+      Survolez une carte pour la mettre en évidence.
+    </p>
+
+    <div class="hero-btns">
+      <a href="#commandes" class="btn-p">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        Explorer les commandes
+      </a>
+      <a href="https://github.com" target="_blank" class="btn-g">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        Ouvrir GitHub
+      </a>
+    </div>
+
+    <!-- terminal -->
+    <div class="terminal">
+      <div class="t-bar">
+        <div class="td tr"></div>
+        <div class="td ty"></div>
+        <div class="td tg"></div>
+        <div class="t-title">bash — mon-projet</div>
+      </div>
+      <div class="t-body">
+        <div class="t-line"><span class="tp">~/projet $</span>&nbsp;<span class="tc">git init</span></div>
+        <div class="t-line to">Initialized empty Git repository in ~/projet/.git/</div>
+        <div class="t-line"><span class="tp">~/projet $</span>&nbsp;<span class="tc">git add</span>&nbsp;<span class="ta">.</span></div>
+        <div class="t-line"><span class="tp">~/projet $</span>&nbsp;<span class="tc">git commit</span>&nbsp;<span class="ta">-m "premier commit"</span></div>
+        <div class="t-line to">[main (root-commit) a3f9b12] premier commit</div>
+        <div class="t-line"><span class="tp">~/projet $</span>&nbsp;<span class="cursor"></span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── STATS ─── -->
+<div class="stats">
+  <div class="stat"><div class="stat-n">8</div><div class="stat-l">Catégories</div></div>
+  <div class="stat"><div class="stat-n">30+</div><div class="stat-l">Commandes</div></div>
+  <div class="stat"><div class="stat-n">100%</div><div class="stat-l">CSS pur</div></div>
+  <div class="stat"><div class="stat-n">0</div><div class="stat-l">JavaScript</div></div>
+</div>
+
+<!-- ─── COMMANDS ─── -->
+<div class="cmds" id="commandes">
+
+  <div class="divider">
+    <div class="div-line"></div>
+    <span class="div-txt">Référence des commandes</span>
+    <div class="div-line"></div>
+  </div>
+
+  <!-- CONFIG -->
+  <div class="cat">
+    <div class="cat-hdr">
+      <div class="cat-ico" style="background:rgba(255,140,66,.1)">⚙️</div>
+      <div><div class="cat-name">Configuration</div><div class="cat-count">3 commandes</div></div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git config</span><span class="cf">--global</span><span class="ca">user.name "Nom"</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Définir le nom d'utilisateur Git global</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git config</span><span class="cf">--global</span><span class="ca">user.email "email"</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Définir l'adresse email globale</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git config</span><span class="cf">--list</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Lister toute la configuration active</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INIT -->
+  <div class="cat">
+    <div class="cat-hdr">
+      <div class="cat-ico" style="background:rgba(0,229,113,.1)">🚀</div>
+      <div><div class="cat-name">Initialisation</div><div class="cat-count">3 commandes</div></div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git init</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Initialiser un nouveau dépôt Git local</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git clone</span><span class="ca">&lt;url&gt;</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Cloner un dépôt distant localement</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git clone</span><span class="ca">&lt;url&gt; dossier</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Cloner dans un dossier personnalisé</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATUT -->
+  <div class="cat">
+    <div class="cat-hdr">
+      <div class="cat-ico" style="background:rgba(77,158,255,.1)">🔍</div>
+      <div><div class="cat-name">Statut & Suivi</div><div class="cat-count">4 commandes</div></div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git status</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Voir l'état des fichiers du dépôt</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git add</span><span class="ca">&lt;fichier&gt;</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Indexer un fichier spécifique</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git add</span><span class="ca">.</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Indexer tous les fichiers modifiés</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git diff</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Voir les modifications non indexées</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMITS -->
+  <div class="cat">
+    <div class="cat-hdr">
+      <div class="cat-ico" style="background:rgba(167,139,250,.1)">💾</div>
+      <div><div class="cat-name">Commits</div><div class="cat-count">4 commandes</div></div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git commit</span><span class="cf">-m</span><span class="ca">"message"</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Enregistrer les changements indexés</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git commit</span><span class="cf">-am</span><span class="ca">"message"</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Add + commit en une seule commande</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git commit</span><span class="cf">--amend</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Modifier le dernier commit</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git log</span><span class="cf">--oneline</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Historique compact des commits</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRANCHES -->
+  <div class="cat">
+    <div class="cat-hdr">
+      <div class="cat-ico" style="background:rgba(255,79,94,.1)">🌿</div>
+      <div><div class="cat-name">Branches</div><div class="cat-count">6 commandes</div></div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git branch</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Lister toutes les branches locales</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git branch</span><span class="ca">&lt;nom&gt;</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Créer une nouvelle branche</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git switch</span><span class="ca">&lt;branche&gt;</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Basculer vers une branche existante</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git switch</span><span class="cf">-c</span><span class="ca">&lt;nom&gt;</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Créer et basculer vers une branche</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git merge</span><span class="ca">&lt;branche&gt;</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Fusionner une branche dans la courante</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git branch</span><span class="cf">-d</span><span class="ca">&lt;branche&gt;</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Supprimer une branche locale</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REMOTE -->
+  <div class="cat">
+    <div class="cat-hdr">
+      <div class="cat-ico" style="background:rgba(0,229,113,.1)">☁️</div>
+      <div><div class="cat-name">Dépôt Distant</div><div class="cat-count">6 commandes</div></div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git remote add</span><span class="ca">origin &lt;url&gt;</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Lier le dépôt local à GitHub</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git remote</span><span class="cf">-v</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Voir les remotes configurés</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git push</span><span class="ca">origin &lt;branche&gt;</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Envoyer les commits vers GitHub</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git push</span><span class="cf">-u</span><span class="ca">origin main</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Push initial avec tracking upstream</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git pull</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Récupérer et fusionner les changements</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git fetch</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Récupérer sans fusionner</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANNULATION -->
+  <div class="cat">
+    <div class="cat-hdr">
+      <div class="cat-ico" style="background:rgba(255,79,94,.1)">↩️</div>
+      <div><div class="cat-name">Annulation</div><div class="cat-count">4 commandes</div></div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git restore</span><span class="ca">&lt;fichier&gt;</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Annuler les modifications non indexées</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git restore</span><span class="cf">--staged</span><span class="ca">&lt;fichier&gt;</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Retirer un fichier de la staging area</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git revert</span><span class="ca">&lt;hash&gt;</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Annuler un commit sans réécrire l'historique</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git reset</span><span class="cf">--hard</span><span class="ca">HEAD~1</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">⚠️ Supprimer le dernier commit définitivement</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STASH -->
+  <div class="cat">
+    <div class="cat-hdr">
+      <div class="cat-ico" style="background:rgba(77,158,255,.1)">📦</div>
+      <div><div class="cat-name">Stash</div><div class="cat-count">3 commandes</div></div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git stash</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Mettre de côté les changements en cours</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git stash pop</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Réappliquer le dernier stash</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="cmd-text"><span class="cp">$</span><span class="cc">git stash list</span></div>
+          <div class="copy-tag">hover</div>
+        </div>
+        <div class="cmd-desc">Voir tous les stashs sauvegardés</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /cmds -->
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="foot-logo">Git<span>Guide</span></div>
+  <ul class="foot-links">
+    <li><a href="https://git-scm.com/docs" target="_blank">Documentation Git</a></li>
+    <li><a href="https://github.com" target="_blank">GitHub</a></li>
+    <li><a href="https://docs.github.com" target="_blank">GitHub Docs</a></li>
+  </ul>
+  <div class="foot-copy">© 2026 — 0 JavaScript</div>
+</footer>
+
+</body>
+</html>
