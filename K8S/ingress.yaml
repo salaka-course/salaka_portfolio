@@ -1,8 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: salaka-portfolio-ingress
-  namespace: salaka-portfolio
+  name: mymanualgithub-app-ingress
+  namespace: MANUALGITHUB-APP-NS
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
@@ -10,16 +10,16 @@ metadata:
 spec:
   tls:
   - hosts:
-      - portfolio.salaka.dev  # ← Remplacez par votre domaine
+      - mymanualgithub.dev  # ← Remplacez par votre domaine
     secretName: salaka-tls
   rules:
-  - host: portfolio.salaka.dev  # ← Remplacez par votre domaine
+  - host: mymanualgithub.dev  # ← Remplacez par votre domaine
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: salaka-portfolio-svc
+            name: mymanualgithub-app-svc
             port:
               number: 80
