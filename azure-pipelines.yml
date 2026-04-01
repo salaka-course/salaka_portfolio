@@ -1,0 +1,52 @@
+trigger:
+- main
+
+variables:
+  acrName: portfoliosalaka
+  imageName: mymanualgithub-app
+  resourceGroup: rg-portfolio
+  aksCluster: portfolio-aks
+
+stages:
+
+# 🐳 BUILD + PUSH
+- stage: Build
+  jobs:
+  - job: BuildAndPush
+    pool:
+      vmImage: ubuntu-latest
+
+    steps:
+    - checkout: self
+
+    - task: Docker@2
+      inputs:
+        containerRegistry: azure-conn
+        repository: $(imageName)
+        command: buildAndPush
+        Dockerfile: '**/Dockerfile'
+        tags: |
+          $(Build.BuildId)
+
+# 🚀 DEPLOY AKS
+- stage: Deploy
+  dependsOn: Build
+  jobs:
+  - job: DeployToAKS
+    pool:
+      vmImage: ubuntu-latest
+
+    steps:
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: azure-conn
+        scriptType: bash
+        scriptLocation: inlineScript
+        inlineScript: |
+          az aks get-credentials \
+            --resource-group $(resourceGroup) \
+            --name $(aksCluster) \
+            --overwrite-existing
+
+          kubectl set image deployment/mymanualgithub-app-deployment \
+            portfolio=$(acrName).azurecr.io/$(imageName):$(Build.BuildId)
