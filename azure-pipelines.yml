@@ -14,11 +14,9 @@ stages:
   jobs:
   - job: BuildAndPush
     pool:
-      vmImage: ubuntu-latest
-
+      name: myagent
     steps:
     - checkout: self
-
     - task: Docker@2
       inputs:
         containerRegistry: azure-conn
@@ -34,8 +32,7 @@ stages:
   jobs:
   - job: DeployToAKS
     pool:
-      vmImage: ubuntu-latest
-
+      name: myagent
     steps:
     - task: AzureCLI@2
       inputs:
@@ -47,10 +44,5 @@ stages:
             --resource-group $(resourceGroup) \
             --name $(aksCluster) \
             --overwrite-existing
-
           kubectl set image deployment/mymanualgithub-app-deployment \
-<<<<<<< HEAD
-            portfolio=$(acrName).azurecr.io/$(imageName):$(Build.BuildId)
-=======
-            portfolio=$(acrName).azurecr.io/$(imageName):$(Build.BuildId)
->>>>>>> azure_pipeline
+            mymanualgithub=$(acrName).azurecr.io/$(imageName):$(Build.BuildId)
