@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mymanualgithub-app-svc
+  namespace: mymanualgithub-app-ns
+spec:
+  selector:
+    app: mymanualgithub-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP
