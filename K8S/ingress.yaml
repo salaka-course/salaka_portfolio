@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: salaka-portfolio-ingress
+  namespace: salaka-portfolio
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+spec:
+  tls:
+  - hosts:
+      - portfolio.salaka.dev  # ← Remplacez par votre domaine
+    secretName: salaka-tls
+  rules:
+  - host: portfolio.salaka.dev  # ← Remplacez par votre domaine
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: salaka-portfolio-svc
+            port:
+              number: 80
