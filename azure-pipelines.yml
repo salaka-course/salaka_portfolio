@@ -19,7 +19,7 @@ stages:
     - checkout: self
     - task: Docker@2
       inputs:
-        containerRegistry: azure-conn
+        containerRegistry: azure-conn-arc
         repository: $(imageName)
         command: buildAndPush
         Dockerfile: '**/Dockerfile'
@@ -36,7 +36,7 @@ stages:
     steps:
     - task: AzureCLI@2
       inputs:
-        azureSubscription: azure-conn
+        azureSubscription: azure-conn-
         scriptType: bash
         scriptLocation: inlineScript
         inlineScript: |
