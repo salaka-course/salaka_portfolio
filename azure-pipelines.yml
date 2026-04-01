@@ -49,4 +49,8 @@ stages:
             --overwrite-existing
 
           kubectl set image deployment/mymanualgithub-app-deployment \
+<<<<<<< HEAD
             portfolio=$(acrName).azurecr.io/$(imageName):$(Build.BuildId)
+=======
+            portfolio=$(acrName).azurecr.io/$(imageName):$(Build.BuildId)
+>>>>>>> azure_pipeline
