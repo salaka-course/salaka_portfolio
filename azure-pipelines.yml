@@ -15,14 +15,17 @@ stages:
   - job: BuildAndPush
     pool:
       name: myagent
+
+
     steps:
     - checkout: self
+
     - task: Docker@2
       inputs:
-        containerRegistry: azure-conn-arc
+        containerRegistry: azure-conn-acr
         repository: $(imageName)
         command: buildAndPush
-        Dockerfile: '**/Dockerfile'
+        Dockerfile: '**/dockerfile'
         tags: |
           $(Build.BuildId)
 
@@ -33,10 +36,11 @@ stages:
   - job: DeployToAKS
     pool:
       name: myagent
+
     steps:
     - task: AzureCLI@2
       inputs:
-        azureSubscription: azure-conn-
+        azureSubscription: azure-conn-arm 
         scriptType: bash
         scriptLocation: inlineScript
         inlineScript: |
@@ -44,5 +48,6 @@ stages:
             --resource-group $(resourceGroup) \
             --name $(aksCluster) \
             --overwrite-existing
+
           kubectl set image deployment/mymanualgithub-app-deployment \
-            mymanualgithub=$(acrName).azurecr.io/$(imageName):$(Build.BuildId)
+            mymanualgithub-app=$(acrName).azurecr.io/$(imageName):$(Build.BuildId)
