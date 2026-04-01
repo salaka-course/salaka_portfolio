@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mymanualgithub-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mymanualgithub-app
+  template:
+    metadata:
+      labels:
+        app: mymanualgithub-app
+    spec:
+      containers:
+      - name: mymanualgithub-app
+        image: portfoliosalaka.azurecr.io/mymanualgithub-app:v1
+        ports:
+        - containerPort: 3000
